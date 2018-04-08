@@ -47,6 +47,7 @@ class WheelPicker extends React.Component {
          itemTextColor={this.props.itemTextColor}
          itemTextSize={this.props.itemTextSize}
          itemTextFontFamily={this.props.itemTextFontFamily}
+         itemTextAlign={this.props.itemTextAlign}
          selectedItemPosition={this.state.selectedItemPosition}
          backgroundColor={this.props.backgroundColor}
          />
@@ -70,6 +71,7 @@ WheelPicker.propTypes = {
       itemTextColor: PropTypes.string,
       itemTextSize: PropTypes.number,
       itemTextFontFamily: PropTypes.string,
+      itemTextAlign: PropTypes.oneOf(['left', 'center', 'right']),
       selectedItemPosition: PropTypes.number,
       backgroundColor: PropTypes.string,
 };
