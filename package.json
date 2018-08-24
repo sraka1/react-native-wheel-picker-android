@@ -22,7 +22,14 @@
     "url": "https://github.com/ElekenAgency/ReactNativeWheelPicker/issues"
   },
   "homepage": "https://github.com/ElekenAgency/ReactNativeWheelPicker",
-  "dependencies": {
-    "moment": "2.22.0"
+  "peerDependencies": {
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-react-native": "^4.0.0",
+    "moment": "^2.22.2",
+    "react": "^16.4.2",
+    "react-native": "^0.55.4"
   }
 }

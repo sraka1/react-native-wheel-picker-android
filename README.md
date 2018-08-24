@@ -203,6 +203,14 @@ Callback with event in the form `event = { data: 1, position: 0 }`
 | startDate | current date | `ISOString` | The Earlest date |
 | daysCount | 365 | `number` | How many days included in Date Picker |
 
+## Examples
+
+To check out examples:
+ 1. Install root packages: `yarn` or `npm install`
+ 2. Install example packages: in the `example` folder, do `yarn` or `npm install`
+ 3. Start metro server: in the `example` folder, do `yarn start` or `npm start`
+ 4. Compile/start Android app: in the `example` folder, do `yarn run-android` or `npm run-android`
+
 ## Questions or suggestions?
 
 Feel free to [open an issue](https://github.com/ElekenAgency/ReactNativeWheelPicker/issues)

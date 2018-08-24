@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "description": "example",
+  "author": "Delightful Studio",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-native start",
+    "run-android": "react-native run-android"
+  },
+  "devDependencies": {
+    "react-native": "link:../node_modules/react-native"
+  }
+}
