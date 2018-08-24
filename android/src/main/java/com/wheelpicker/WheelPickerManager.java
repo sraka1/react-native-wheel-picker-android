@@ -16,6 +16,7 @@ import com.facebook.react.views.text.ReactFontManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implements WheelPicker.OnItemSelectedListener{
@@ -148,6 +149,15 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
       if (wheelPicker!=null){
         Typeface typeface = ReactFontManager.getInstance().getTypeface(itemTextFontFamily, Typeface.NORMAL, wheelPicker.getContext().getAssets());
         wheelPicker.setTypeface(typeface);
+      }
+    }
+
+    @ReactProp(name = "itemTextAlign")
+    public void setItemTextAlign(WheelPicker wheelPicker, String itemTextAlign) {
+      if (wheelPicker!=null){
+        List<String> alignList = Arrays.asList("center", "left", "right");
+        int index = alignList.indexOf(itemTextAlign);
+        wheelPicker.setItemAlign(index);
       }
     }
 

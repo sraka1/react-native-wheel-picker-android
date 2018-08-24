@@ -24,6 +24,7 @@ type Props = {
   itemTextColor?: string,
   itemTextSize?: number,
   itemTextFontFamily?: string,
+  itemTextAlign?: 'left'|'center'|'right',
   selectedItemPosition?: number,
   backgroundColor?: string,
 }
