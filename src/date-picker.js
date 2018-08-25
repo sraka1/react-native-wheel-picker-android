@@ -4,7 +4,7 @@
  * */
 
 import React from "react"
-import { View, StyleSheet } from "react-native"
+import { View } from "react-native"
 import WheelPicker from "./wheel-picker"
 import {
     hourTo24Format,
@@ -16,7 +16,9 @@ import {
     getAmArray
 } from "./Utils"
 
-const millisecondsPerDay = 1000 * 60 * 60 * 24
+import styles from "./styles";
+
+const millisecondsPerDay = 1000 * 60 * 60 * 24;
 
 type Event = {
     data: string | number,
@@ -83,55 +85,59 @@ export default class DatePicker extends React.Component<Props, State> {
     }
 
     render() {
-        const { startDate, days, daysCount, hours, minutes, format24 } = this.props
-        const { initHourInex, initDayInex, initMinuteInex } = this.state
+        const { startDate, days, daysCount, hours, minutes, format24, visibleItemCount = 6 } = this.props;
+        const { initHourInex, initDayInex, initMinuteInex } = this.state;
         return (
             <View style={ styles.container }>
                 <WheelPicker
-                    style={ styles.dateWheelPicker }
+                    style={ [ styles.picker, styles.date ] }
                     isAtmospheric
                     isCurved
-                    visibleItemCount={ 8 }
+                    itemTextAlign="right"
+                    visibleItemCount={ visibleItemCount }
                     data={ days || pickerDateArray( startDate, daysCount ) }
                     selectedItemTextColor={ "black" }
                     onItemSelected={ this.onDaySelected }
                     selectedItemPosition={ initDayInex }
                 />
                 <WheelPicker
-                    style={ styles.wheelPicker }
+                    style={ [ styles.picker, styles.hours, styles.gap ] }
                     isAtmospheric
                     isCyclic
                     isCurved
-                    visibleItemCount={ 8 }
+                    itemTextAlign="center"
+                    visibleItemCount={ visibleItemCount }
                     data={ hours || getHoursArray( format24 ) }
                     selectedItemTextColor={ "black" }
                     onItemSelected={ this.onHourSelected }
                     selectedItemPosition={ initHourInex }
                 />
                 <WheelPicker
-                    style={ styles.wheelPicker }
+                    style={ [ styles.picker, styles.minutes ] }
                     isAtmospheric
                     isCyclic
                     isCurved
-                    visibleItemCount={ 8 }
+                    itemTextAlign="left"
+                    visibleItemCount={ visibleItemCount }
                     data={ minutes || getFiveMinutesArray() }
                     selectedItemTextColor={ "black" }
                     onItemSelected={ this.onMinuteSelected }
                     selectedItemPosition={ initMinuteInex }
                 />
-                { !this.props.format24 && this.renderAm() }
+                { !format24 && this.renderAm( visibleItemCount ) }
             </View>
         )
     }
 
-    renderAm() {
+    renderAm( visibleItemCount ) {
         const { initAmInex } = this.state
         return (
             <WheelPicker
-                style={ styles.wheelPicker }
+                style={ [ styles.picker, styles.AM ] }
                 isAtmospheric
                 isCurved
-                visibleItemCount={ 8 }
+                itemTextAlign="left"
+                visibleItemCount={ visibleItemCount }
                 data={ getAmArray() }
                 selectedItemTextColor={ "black" }
                 onItemSelected={ this.onAmSelected }
@@ -194,21 +200,3 @@ export default class DatePicker extends React.Component<Props, State> {
         }
     }
 }
-
-const styles = StyleSheet.create( {
-    container: {
-        flex: 1,
-        alignItems: "center",
-        flexDirection: "row"
-    },
-    wheelPicker: {
-        height: 150,
-        width: null,
-        flex: 1
-    },
-    dateWheelPicker: {
-        height: 200,
-        width: null,
-        flex: 3
-    }
-} )
