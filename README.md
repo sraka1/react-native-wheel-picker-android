@@ -1,6 +1,8 @@
+#####This is a fork, the original ReactNativeWheelPicker is [here](https://github.com/ElekenAgency/ReactNativeWheelPicker) 
+
 # ReactNativeWheelPicker
-[![npm version](http://img.shields.io/npm/v/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/react-native-wheel-picker-android "View this project on npm")
-[![npm version](http://img.shields.io/npm/dm/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/react-native-wheel-picker-android "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
+[![npm version](http://img.shields.io/npm/dm/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 
 A simple Wheel Picker for Android based on https://github.com/AigeStudio/WheelPicker
 Also you can use multiple pickers, such as DatePicker or TimePicker
@@ -213,4 +215,4 @@ To check out examples:
 
 ## Questions or suggestions?
 
-Feel free to [open an issue](https://github.com/ElekenAgency/ReactNativeWheelPicker/issues)
+Feel free to [open an issue](https://github.com/DelightfulStudio/react-native-wheel-picker-android/issues)
