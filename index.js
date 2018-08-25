@@ -3,8 +3,8 @@
  * @flow
  * */
 
-import WheelPicker from './src/WheelPicker'
-import TimePicker from './src/TimePicker'
-import DatePicker from './src/DatePicker'
+import WheelPicker from './src/wheel-picker'
+import TimePicker from './src/time-picker'
+import DatePicker from './src/date-picker'
 
 export { WheelPicker, TimePicker, DatePicker }
