@@ -1,47 +1,47 @@
 {
-  "name": "@delightfulstudio/react-native-wheel-picker-android",
-  "version": "1.1.2",
-  "description": "Simple Wheel Picker for Android to use with react-native",
-  "main": "index.js",
-  "scripts": {
-    "test": "true",
-    "build": "true",
-    "release-notes": "conventional-github-releaser -p eslint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DelightfulStudio/react-native-wheel-picker-android.git"
-  },
-  "keywords": [
-    "react-component",
-    "react-native",
-    "android",
-    "picker",
-    "wheel-picker",
-    "date-picker",
-    "date-wheel-picker"
-  ],
-  "contributors": [
-    "Artem Kosiakevych <artem.kosiakevych@gmail.com>",
-    "Naoto Kaneko (https://github.com/naoty)",
-    "Delightful Studio (https://github.com/DelightfulStudio)"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DelightfulStudio/react-native-wheel-picker-android/issues"
-  },
-  "homepage": "https://github.com/DelightfulStudio/react-native-wheel-picker-android",
-  "peerDependencies": {
-    "moment": "^2.22.2"
-  },
-  "devDependencies": {
-    "@textpress/eslint-config-textpress": "^0.4.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-react-native": "^4.0.0",
-    "conventional-github-releaser": "^3.1.2",
-    "eslint": "^5.4.0",
-    "moment": "^2.22.2",
-    "react": "^16.4.2",
-    "react-native": "^0.55.4"
-  }
+    "name": "@delightfulstudio/react-native-wheel-picker-android",
+    "version": "1.1.2",
+    "description": "Simple Wheel Picker for Android to use with react-native",
+    "main": "index.js",
+    "scripts": {
+        "test": "true",
+        "build": "true",
+        "release-notes": "conventional-github-releaser -p eslint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DelightfulStudio/react-native-wheel-picker-android.git"
+    },
+    "keywords": [
+        "react-component",
+        "react-native",
+        "android",
+        "picker",
+        "wheel-picker",
+        "date-picker",
+        "date-wheel-picker"
+    ],
+    "contributors": [
+        "Artem Kosiakevych <artem.kosiakevych@gmail.com>",
+        "Naoto Kaneko (https://github.com/naoty)",
+        "Delightful Studio (https://github.com/DelightfulStudio)"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DelightfulStudio/react-native-wheel-picker-android/issues"
+    },
+    "homepage": "https://github.com/DelightfulStudio/react-native-wheel-picker-android",
+    "peerDependencies": {
+        "moment": "^2.22.2"
+    },
+    "devDependencies": {
+        "@textpress/eslint-config-textpress": "^0.4.0",
+        "babel-core": "^6.26.3",
+        "babel-preset-react-native": "^4.0.0",
+        "conventional-github-releaser": "^3.1.2",
+        "eslint": "^5.4.0",
+        "moment": "^2.22.2",
+        "react": "^16.4.2",
+        "react-native": "^0.55.4"
+    }
 }
