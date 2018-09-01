@@ -1,4 +1,4 @@
-import { DatePicker, TimePicker, WheelPicker } from "@delightfulstudio/react-native-wheel-picker-android"
+import { DatePicker, WheelPicker } from "@delightfulstudio/react-native-wheel-picker-android"
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
@@ -13,13 +13,16 @@ export default class MyPickers extends Component {
                     onItemSelected={ ( event ) => this.onItemSelected( event ) }
                     isCurved
                     data={ wheelPickerData }
+                    visibleItemCount={5}
                     style={ styles.wheelPicker }/>
                 <DatePicker
-                    initDate={ now.toISOString() }
-                    onDateSelected={ ( date ) => this.onDateSelected( date ) }/>
-                <TimePicker
-                    initDate={ now.toISOString() }
-                    onTimeSelected={ ( date ) => this.onTimeSelected( date ) }/>
+                    date={ now }
+                    mode="datetime"
+                    onDateChange={ ( date ) => this.onDateTimeSelected( date ) }/>
+                <DatePicker
+                    date={ now }
+                    mode="time"
+                    onDateChange={ ( date ) => this.onTimeSelected( date ) }/>
             </View>
         );
     }
@@ -28,7 +31,7 @@ export default class MyPickers extends Component {
         // do something
     }
 
-    onDateSelected( date ) {
+    onDateTimeSelected( date ) {
         // do something
     }
 
