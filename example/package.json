@@ -1,6 +1,6 @@
 {
-  "name": "example",
-  "description": "example",
+  "name": "wheel_picker_example",
+  "description": "Wheel Picker Example",
   "author": "Delightful Studio",
   "license": "MIT",
   "scripts": {
