@@ -1,13 +1,9 @@
 import { PixelRatio, StyleSheet } from "react-native";
 
-let cache = null;
-
 export default ( customStyles ) => {
     const scale = PixelRatio.getFontScale();
-    if ( !customStyles && cache && cache.scale === scale )
-        return cache.styles;
 
-    const styles = StyleSheet.create( Object.assign( {
+    const styles = {
         container: {
             alignItems: "center",
             justifyContent: "center",
@@ -15,15 +11,15 @@ export default ( customStyles ) => {
         },
 
         picker: {
-            height: 160 * scale,
+            height: 160 * scale
         },
 
         date: {
-            width: 130 * scale,
+            width: 130 * scale
         },
 
         hours: {
-            width: 35 * scale,
+            width: 35 * scale
         },
 
         minutes: {
@@ -31,19 +27,25 @@ export default ( customStyles ) => {
         },
 
         gap: {
-            marginLeft: 10 * scale,
+            marginLeft: 10 * scale
         },
 
         AM: {
             width: 35 * scale
         }
 
-    }, customStyles || {} ) );
-
-    cache = {
-        scale,
-        styles
     };
+    if ( customStyles ) {
+        Object
+            .keys( styles )
+            .forEach( key => {
+                const customStyle = customStyles[ key ];
+                if ( customStyle )
+                    Object.assign( styles[ key ], customStyle );
 
-    return styles;
+            } )
+        ;
+    }
+
+    return StyleSheet.create( styles );
 }
