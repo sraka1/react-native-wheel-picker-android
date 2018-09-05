@@ -19,15 +19,15 @@ export default () => {
         },
 
         date: {
-            width: 150 * scale,
+            width: 130 * scale,
         },
 
         hours: {
-            width: 40 * scale,
+            width: 35 * scale,
         },
 
         minutes: {
-            width: 40 * scale,
+            width: 35 * scale
         },
 
         gap: {
@@ -35,7 +35,7 @@ export default () => {
         },
 
         AM: {
-            width: 40 * scale,
+            width: 35 * scale
         }
 
     } );

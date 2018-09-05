@@ -38,15 +38,15 @@ export default class TimeColumns extends PureComponent {
         return (
             <Fragment>
                 <Column
-                    style={ [ styles.picker, styles.hours ] }
+                    style={ [ styles.picker, styles.hours, !timeOnly && styles.gap ] }
                     isCyclic
-                    itemTextAlign={ timeOnly ? "right" : "center" }
+                    itemTextAlign="right"
                     onItemSelected={ this.onHourSelected }
                     list={ lists.hours }
                     selectedItemPosition={ indexes.hours }
                 />
                 <Column
-                    style={ [ styles.picker, styles.minutes, format24 && styles.gap ] }
+                    style={ [ styles.picker, styles.minutes, styles.gap ] }
                     isCyclic
                     itemTextAlign={ format24 ? "left" : "center" }
                     onItemSelected={ this.onMinuteSelected }
@@ -63,7 +63,7 @@ export default class TimeColumns extends PureComponent {
         const { indexes, lists } = this.state;
         return (
             <Column
-                style={ [ styles.picker, styles.AM ] }
+                style={ [ styles.picker, styles.AM, styles.gap ] }
                 visibleItemCount={ visibleItemCount }
                 onItemSelected={ this.onAmSelected }
                 list={ lists.am }
