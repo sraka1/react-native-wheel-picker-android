@@ -4,7 +4,7 @@ Note: this is a heavily modified fork, the original can be found [here](https://
 [![npm version](http://img.shields.io/npm/v/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 [![npm version](http://img.shields.io/npm/dm/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 
-Android-only `WheelPicker` (based on https://github.com/AigeStudio/WheelPicker) and `DatePicker` components that mimick their standard iOS counterparts ([PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
+Android-only `WheelPicker` (based on https://github.com/AigeStudio/WheelPicker) and `DatePicker` components that mimic their standard iOS counterparts ([PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
 and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html), correspondingly).
 
 `DatePicker` interface is _mostly_ compatible with `DatePickerIOS`.
@@ -198,19 +198,21 @@ Callback with event in the form `event = { data: 1, position: 0 }`
 
 | Prop | Required | Default | Type | DatePickerIOS | Description |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| date | [] | now | `Date` | [x] | The currently selected date | 
+| date | [ ] | now | `Date` | [x] | The currently selected date | 
 | onDateChange | [x] | null | `func` | [x] | Date change handler |
-| minimumDate | [] | `maximumDate - 1 year` or `date` | `Date` | [x] | Minimum date - restricts the range of possible date/time values | 
-| maximumDate | [] | `minimumDate + 1 year` | `Date` | [x] | Maximum date - restricts the range of possible date/time values |
-| minuteInterval | [] | 1 | `enum(1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30)` | [x] | The interval at which minutes can be selected |
-| mode* | [] | 'date' | `enum('date', 'time', 'datetime')` | [x] | The date picker mode |
-| locale** | [] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker | 
-| styles | [] | | `{ picker?: {}, date?: {}, hours?: {}, minutes?: {}, gap?: {}, AM?: {} }` | [] | The control styles - allows to adjust control layout |
-| todayTitle | [] | 'Today' | `string` | [] | The title for today date item |   
+| minimumDate | [ ] | `maximumDate - 1 year` or `date` | `Date` | [x] | Minimum date - restricts the range of possible date/time values | 
+| maximumDate | [ ] | `minimumDate + 1 year` | `Date` | [x] | Maximum date - restricts the range of possible date/time values |
+| minuteInterval | [ ] | 1 | `enum(1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30)` | [x] | The interval at which minutes can be selected |
+| mode* | [ ] | 'date' | `enum('date', 'time', 'datetime')` | [x] | The date picker mode |
+| locale** | [ ] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker | 
+| styles*** | [ ] | | `{ picker, date, hours, minutes, gap, AM }` | [ ] | The control styles - allows to adjust control layout, each property is an object with style properties, ex: `{ picker: { height: 100 } }` |
+| todayTitle | [ ] | 'Today' | `string` | [ ] | The title for today date item |   
 
-\* `mode: 'date'` doesn't allow to select day, month and year separately one from another and therefor is not suitable for selection in a large range of dates, ex: birthdays.
+\* `mode: 'date'` doesn't support separate selection of date parts (day/month/year), therefor it is not suitable for selection in a large range of dates, ex: birthdays.
 
 \*\* `locale: {locale id}` support is limited to 12/24 mode and names of months and days, it also requires explicit `import 'moment/locale/{locale id}'` somewhere in your script for any non-english locales to work properly.  
+
+\*\*\* only `size`, `padding` and `margin` style properties were tested, other properties may not work   
 
 ## Questions or suggestions?
 
