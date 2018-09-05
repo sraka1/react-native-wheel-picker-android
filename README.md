@@ -1,84 +1,93 @@
-#####This is a fork, the original ReactNativeWheelPicker is [here](https://github.com/ElekenAgency/ReactNativeWheelPicker) 
+Note: this is a heavily modified fork, the original can be found [here](https://github.com/ElekenAgency/ReactNativeWheelPicker) 
 
-# ReactNativeWheelPicker
+# @delightfulstudio/react-native-wheel-picker-android
 [![npm version](http://img.shields.io/npm/v/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 [![npm version](http://img.shields.io/npm/dm/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 
-A simple Wheel Picker for Android based on https://github.com/AigeStudio/WheelPicker
-Also you can use multiple pickers, such as DatePicker or TimePicker
+This package is for Android only.
 
-For IOS you can use a [good Picker for IOS](https://facebook.github.io/react-native/docs/pickerios.html)
-and [DatePicker for IOS](https://facebook.github.io/react-native/docs/datepickerios.html)
+The package provides WheelPicker based on https://github.com/AigeStudio/WheelPicker and DatePicker built on top it.
+DatePicker has props mostly compatible with DatePickerIOS and can be used as its Android counterpart.    
+ 
+For IOS you can use [standard PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
+and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html).
 
 ## Installation Android
-`yarn add react-native-wheel-picker-android`
+`yarn add @delightfulstudio/react-native-wheel-picker-android`
 
-`react-native link react-native-wheel-picker-android`
+`react-native link @delightfulstudio/react-native-wheel-picker-android`
 
 # Usage
 
 ```js
 
-import { WheelPicker, DatePicker, TimePicker } from 'react-native-wheel-picker-android'
+import { WheelPicker, DatePicker } from '@delightfulstudio/react-native-wheel-picker-android'
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    StyleSheet,
+    View
 } from 'react-native';
 
 const wheelPickerData = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'];
 const now = new Date()
 
-class MyPickers extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <WheelPicker
-           onItemSelected={(event)=>this.onItemSelected(event)}
-           isCurved
-           data={wheelPickerData}
-           style={styles.wheelPicker}/>
-         <DatePicker
-           initDate={now.toISOString()}
-           onDateSelected={(date)=>this.onDateSelected(date)}/>
-         <TimePicker
-           initDate={now.toISOString()}
-           onTimeSelected={(date)=>this.onTimeSelected(date)}/>
-      </View>
-    );
-  }
+export default class MyPickers extends Component {
+    render() {
+        return (
+            <View style={ styles.container }>
+                <WheelPicker
+                    onItemSelected={ this.onItemSelected }
+                    isCurved
+                    data={ wheelPickerData }
+                    visibleItemCount={5}
+                    style={ styles.wheelPicker }/>
+                <DatePicker
+                    date={ now }
+                    mode="datetime"
+                    onDateChange={ this.onDateSelected }/>
+                <DatePicker
+                    date={ now }
+                    mode="time"
+                    onDateChange={ this.onTimeSelected }/>
+            </View>
+        );
+    }
 
-  onItemSelected(event){
-    // do something
-  }
+    onItemSelected = event => {
+        // do something
+    };
 
-  onDateSelected(date){
-    // do something
-  }
+    onDateSelected = date => {
+        // do something
+    };
 
-  onTimeSelected(date){
-    // do something
-  }
-
-
+    onTimeSelected = date =>{
+        // do something
+    };
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  wheelPicker: {
-    width: 200,
-    height: 150
-  }
+    container: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    wheelPicker: {
+        width: 200,
+        height: 150
+    }
 });
 
 module.exports = MyPickers;
 
 ```
+
+To check out working example:
+ 1. clone [repo](https://github.com/DelightfulStudio/react-native-wheel-picker-android)
+ 2. Install root packages: `yarn` or `npm install`
+ 3. Install example packages: in the `example` folder, do `yarn` or `npm install`
+ 4. Start metro server: in the `example` folder, do `yarn start` or `npm start`
+ 5. Compile/start Android app: in the `example` folder, do `yarn run-android` or `npm run-android`
+
 
 ## Wheel Picker
 
@@ -86,26 +95,26 @@ module.exports = MyPickers;
 
 ```js
 
-import { WheelPicker, DatePicker, TimePicker } from 'react-native-wheel-picker-android'
+import { WheelPicker, DatePicker, TimePicker } from '@delightfulstudio/react-native-wheel-picker-android'
 ...
 
-  render() {
-    let arr = [1,2,3];
-    return (
-      <WheelPicker
-          onItemSelected={(event)=>{/* do something */}}
-          isCurved
-          isCyclic
-          data={arr}
-          style={{width:300, height: 300}}/>
-    );
+    render() {
+        const arr = [1,2,3];
+        return (
+        <WheelPicker
+            onItemSelected={ event => {/* do something */} }
+            isCurved
+            isCyclic
+            data={arr}
+            style={{width:300, height: 300}}/>
+        );
   }
 ```
 
 ## Props
 
 | Prop  | Default  | Type | Description |
-| :------------ |:---------------:| :---------------:| :-----|
+| :--- |:---:| :---:| :--- |
 | onItemSelected | null | `func` | Callback when user select item {data: 'itemData', position: 'itemPosition'} |
 | data | default string array | `array` | Data array (string or number type)  |
 | isCurved | false | `bool` | Make Wheel Picker curved |
@@ -121,6 +130,7 @@ import { WheelPicker, DatePicker, TimePicker } from 'react-native-wheel-picker-a
 | itemTextColor | grey | `string` | Wheel Picker's items color  |
 | itemTextSize | 20 | `number` |  Wheel Picker's items text size  |
 | itemTextFontFamily | null | `string` | Wheel Picker's items text font name  |
+| itemTextAlign | 'center' | enum('left', 'center', 'right') | Wheel Picker's items text alignment |
 | selectedItemPosition | null | `number` | Select current item position |
 | backgroundColor | transparent | `string` | Wheel Picker background color  |
 
@@ -134,44 +144,9 @@ An array of options. This should be provided with an __array of strings__ or __a
 Callback with event in the form `event = { data: 1, position: 0 }`
 
 
-## Time Picker
-
-![](assets/timePicker.gif)
-
-```js
-
-...
-
-  render() {
-    const minutesArray = ['00', '15', '30', '45'];
-    const now = new Date();
-    return (
-      	<TimePicker
-	       minutes={minutesArray}
-   	     onTimeSelected={(date)=>this.onTimeSelected(date))}
-	       initDate={now.toISOString()}/>
-    );
-  }
-
-  onTimeSelected(date){
-    // do something
-  }
-
-```
-
-## Props
-
-| Prop  | Default  | Type | Description |
-| :------------ |:---------------:| :---------------:| :-----|
-| onTimeSelected | null | `func` | Callback when user select time {date: 'selectedTime'} |
-| initDate | current date | `ISOString` | Initial selected time  |
-| hours | [1, 2, 3, .. 12] | `array` | hours array |
-| minutes | ['00', '05' ,'10', .. '55'] | `array` | minutes array |
-
-
 ## Date Picker
 
-![](assets/datePicker.gif)
+![](assets/datePicker.png)
 
 ```js
 
@@ -180,39 +155,32 @@ Callback with event in the form `event = { data: 1, position: 0 }`
   render() {
   let now = new Date();
     return (
-      	<DatePicker
-          initDate={now.toISOString()}
-          onDateSelected={(date)=> this.onDateSelected(date)}/>
+        <DatePicker
+            date={ now }
+            mode="datetime"
+            onDateChange={ this.onDateSelected }/>
     );
   }
 
-  onDateSelected(date){
+  onDateSelected = date => {
     // do something
-  }
+  };
 
 ```
 
 ## Props
 
-| Prop  | Default  | Type | Description |
-| :------------ |:---------------:| :---------------:| :-----|
-| onDateSelected | null | `func` | Callback when user select date {date: 'selectedDate'} |
-| initDate | current date | `ISOString` | Initial selected date  |
-| days | ['Today', 'Wed Dec 28', ...] | `array` | days array |
-| hours | [1, 2, 3 .. 12] | `array` | hours array |
-| minutes | ['00', '05', '10', .. '55'] | `array` | minutes array |
-| format24 | false | `bool` | if true hours format is 24 hours|
-| startDate | current date | `ISOString` | The Earlest date |
-| daysCount | 365 | `number` | How many days included in Date Picker |
-
-## Examples
-
-To check out examples:
- 1. clone [repo](https://github.com/DelightfulStudio/react-native-wheel-picker-android)
- 2. Install root packages: `yarn` or `npm install`
- 3. Install example packages: in the `example` folder, do `yarn` or `npm install`
- 4. Start metro server: in the `example` folder, do `yarn start` or `npm start`
- 5. Compile/start Android app: in the `example` folder, do `yarn run-android` or `npm run-android`
+| Prop | Required | Default | Type | DatePickerIOS | Description |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| date | [] | now | `Date` | [x] | The currently selected date | 
+| onDateChange | [x] | null | `func` | [x] | Date change handler |
+| minimumDate | [] | `maximumDate - 1 year` or `date` | `Date` | [x] | Minimum date - restricts the range of possible date/time values | 
+| maximumDate | [] | `minimumDate + 1 year` | `Date` | [x] | Maximum date - restricts the range of possible date/time values |
+| minuteInterval | [] | 1 | `enum(1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30)` | [x] | The interval at which minutes can be selected |
+| mode | [] | 'date' | `enum('date', 'time', 'datetime')` | [x] | The date picker mode |
+| locale | [] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker - supported partially, to work properly requires explicit `import "moment/locale/{locale}"` somewhere in your script} | 
+| styles | [] | | `{ picker?: {}, date?: {}, hours?: {}, minutes?: {}, gap?: {}, AM?: {} }` | [] | The control styles - allows to adjust control layout |
+| todayTitle | [] | 'Today' | `string` | [] | The title for today date item |   
 
 ## Questions or suggestions?
 
