@@ -17,12 +17,12 @@ export default class DateColumns extends PureComponent {
     };
 
     static getDerivedStateFromProps( props, state ) {
-        const { date, minimumDate, maximumDate, locale } = props;
+        const { date, minimumDate, maximumDate, locale, todayTitle } = props;
 
         if ( state.date && state.date.valueOf() === date.valueOf() )
             return null;
 
-        const list = makeDateList( { minimumDate, maximumDate, locale } );
+        const list = makeDateList( { minimumDate, maximumDate, locale, todayTitle } );
 
         const index = dateToIndex( date, list );
         return { date, index, list };

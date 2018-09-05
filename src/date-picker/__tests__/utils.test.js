@@ -2,7 +2,7 @@ import {
     dateToIndex,
     indexesToValues,
     makeAmList,
-    makeDateList,
+    makeDateList as makeDateListOrg,
     makeHoursList,
     makeMinutesList,
     makeTimeLists,
@@ -10,6 +10,10 @@ import {
     normalizeMinMaxDates,
     timeToIndexes
 } from "../utils";
+
+const makeDateList = props => {
+    return makeDateListOrg( { todayTitle: "Today", ...props } )
+};
 
 describe( "date-picker/utils", () => {
 

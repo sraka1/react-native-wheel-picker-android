@@ -32,7 +32,8 @@ export default class DatePicker extends PureComponent {
     };
 
     static defaultProps = {
-        mode: "date"
+        mode: "date",
+        todayTitle: "Today",
     };
 
 
@@ -68,7 +69,7 @@ export default class DatePicker extends PureComponent {
         if ( timeOnly )
             return null;
 
-        const { locale } = this.props;
+        const { locale, todayTitle } = this.props;
         return (
             <DateColumns
                 dateOnly={ dateOnly }
@@ -78,6 +79,7 @@ export default class DatePicker extends PureComponent {
                 onChange={ this.onChange }
                 styles={ this.styles }
                 locale={ locale }
+                todayTitle={ todayTitle }
             />
         );
     }

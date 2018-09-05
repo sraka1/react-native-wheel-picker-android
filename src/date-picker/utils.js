@@ -131,7 +131,6 @@ const destructureDate = moment => ( {
 export const makeDateList = ( { minimumDate, maximumDate, locale, todayDate, todayTitle } ) => {
 
     todayDate = todayDate || new Date();
-    todayTitle = todayTitle || "Today";
 
     const today = formatDate( todayDate, locale );
     const current = moment( minimumDate ).startOf( "day" );
