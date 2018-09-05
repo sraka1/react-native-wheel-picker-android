@@ -39,7 +39,7 @@ In the same file find method `getPackages()` and add `new WheelPickerPackage()` 
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new WheelPickerPackage() // << add this
+          new WheelPickerPackage() // << add this line
       );
     }
 ``` 
@@ -121,7 +121,7 @@ To check out working example:
 
 ```js
 
-import { WheelPicker, DatePicker, TimePicker } from '@delightfulstudio/react-native-wheel-picker-android'
+import { WheelPicker } from '@delightfulstudio/react-native-wheel-picker-android'
 ...
 
     render() {
@@ -135,6 +135,7 @@ import { WheelPicker, DatePicker, TimePicker } from '@delightfulstudio/react-nat
             style={{width:300, height: 300}}/>
         );
   }
+...
 ```
 
 ## Props
@@ -175,23 +176,23 @@ Callback with event in the form `event = { data: 1, position: 0 }`
 ![](assets/datePicker.png)
 
 ```js
-
+import { DatePicker } from '@delightfulstudio/react-native-wheel-picker-android'
 ...
 
-  render() {
-  let now = new Date();
-    return (
-        <DatePicker
-            date={ now }
-            mode="datetime"
-            onDateChange={ this.onDateSelected }/>
-    );
-  }
+    render() {
+        const now = new Date();
+        return (
+            <DatePicker
+                date={ now }
+                mode="datetime"
+                onDateChange={ this.onDateSelected }/>
+        );
+    }
 
-  onDateSelected = date => {
-    // do something
-  };
-
+    onDateSelected = date => {
+        // do something
+    };
+...
 ```
 
 ## Props
@@ -208,7 +209,7 @@ Callback with event in the form `event = { data: 1, position: 0 }`
 | styles*** | [ ] | | `{ picker, date, hours, minutes, gap, AM }` | [ ] | The control styles - allows to adjust control layout, each property is an object with style properties, ex: `{ picker: { height: 100 } }` |
 | todayTitle | [ ] | 'Today' | `string` | [ ] | The title for today date item |   
 
-\* `mode: 'date'` doesn't support separate selection of date parts (day/month/year), therefor it is not suitable for selection in a large range of dates, ex: birthdays.
+\* `mode: 'date'` doesn't support year selection, therefor it is not suitable for large range of dates, ex: birthdays.
 
 \*\* `locale: {locale id}` support is limited to 12/24 mode and names of months and days, it also requires explicit `import 'moment/locale/{locale id}'` somewhere in your script for any non-english locales to work properly.  
 
