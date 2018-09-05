@@ -1,4 +1,5 @@
 .*
+assets/
 example/
 android/build/
 **/__tests__/
