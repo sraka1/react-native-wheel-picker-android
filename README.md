@@ -214,9 +214,9 @@ import { DatePicker } from '@delightfulstudio/react-native-wheel-picker-android'
 
 \*\* `locale: {locale id}` support is limited to 12/24 mode and names of months and days, it also requires explicit `import 'moment/locale/{locale id}'` somewhere in your script for any non-english locales to work properly.  
 
-\*\*\* can be used to change background color and surrounding margin/padding
+\*\*\* `style` can be used to change background color and surrounding margin/padding
 
-\*\*\*\* only `size`, `padding` and `margin` style properties were tested, other properties may not work   
+\*\*\*\* `styles` were tested only with `size`, `padding` and `margin` style properties, other properties may not work   
 
 ## Questions or suggestions?
 
