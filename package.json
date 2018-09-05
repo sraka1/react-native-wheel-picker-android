@@ -1,7 +1,7 @@
 {
     "name": "@delightfulstudio/react-native-wheel-picker-android",
     "version": "1.1.2",
-    "description": "Simple Wheel Picker for Android to use with react-native",
+    "description": "Wheel Picker and Date Picker for Android to use with react-native",
     "main": "index.js",
     "scripts": {
         "test": "jest",

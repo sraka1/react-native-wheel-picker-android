@@ -1,6 +1,8 @@
 .*
+assets/
 example/
 **/__tests__/
 yalc.lock
 yarn.lock
 *.log
+README.md
