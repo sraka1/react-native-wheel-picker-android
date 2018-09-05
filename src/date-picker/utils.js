@@ -128,9 +128,10 @@ const destructureDate = moment => ( {
     date: moment.date()
 } );
 
-export const makeDateList = ( { minimumDate, maximumDate, locale, todayDate } ) => {
+export const makeDateList = ( { minimumDate, maximumDate, locale, todayDate, todayTitle } ) => {
 
     todayDate = todayDate || new Date();
+    todayTitle = todayTitle || "Today";
 
     const today = formatDate( todayDate, locale );
     const current = moment( minimumDate ).startOf( "day" );
@@ -140,13 +141,13 @@ export const makeDateList = ( { minimumDate, maximumDate, locale, todayDate } ) 
     do {
         const title = formatDate( current, locale );
         result.push( {
-            title: title === today ? "TODAY" : title,
+            title: title === today ? todayTitle : title,
             value: destructureDate( current )
         } );
         current.add( { days: 1 } );
     } while ( !end.isBefore( current ) );
 
-    return result
+    return result;
 };
 
 

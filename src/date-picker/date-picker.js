@@ -27,7 +27,8 @@ export default class DatePicker extends PureComponent {
         maximumDate: PropTypes.instanceOf( Date ),
         minuteInterval: PropTypes.oneOf( [ 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30 ] ),
         styles: PropTypes.object,
-        locale: PropTypes.string
+        locale: PropTypes.string,
+        todayTitle: PropTypes.string
     };
 
     static defaultProps = {

@@ -301,7 +301,8 @@ describe( "date-picker/utils", () => {
                 todayDate: new Date( 2018, 9, 12 ),
                 minimumDate: new Date( 2018, 9, 10 ),
                 maximumDate: new Date( 2018, 9, 15 ),
-                locale: "fr"
+                locale: "fr",
+                todayTitle: "aujourd'hui"
             } ) ).toMatchSnapshot();
         } );
 
