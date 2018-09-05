@@ -205,15 +205,18 @@ import { DatePicker } from '@delightfulstudio/react-native-wheel-picker-android'
 | maximumDate | [ ] | `minimumDate + 1 year` | `Date` | [x] | Maximum date - restricts the range of possible date/time values |
 | minuteInterval | [ ] | 1 | `enum(1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30)` | [x] | The interval at which minutes can be selected |
 | mode* | [ ] | 'date' | `enum('date', 'time', 'datetime')` | [x] | The date picker mode |
-| locale** | [ ] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker | 
-| styles*** | [ ] | | `{ picker, date, hours, minutes, gap, AM }` | [ ] | The control styles - allows to adjust control layout, each property is an object with style properties, ex: `{ picker: { height: 100 } }` |
+| locale** | [ ] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker |
+| style*** | [ ] | null | obj | [x] | The control container style |  
+| styles**** | [ ] | | `{ picker, date, hours, minutes, gap, AM }` | [ ] | The control part styles - allows to adjust control internal layout, each property is an object with style properties, ex: `{ picker: { height: 100 } }` |
 | todayTitle | [ ] | 'Today' | `string` | [ ] | The title for today date item |   
 
 \* `mode: 'date'` doesn't support year selection, therefor it is not suitable for large range of dates, ex: birthdays.
 
 \*\* `locale: {locale id}` support is limited to 12/24 mode and names of months and days, it also requires explicit `import 'moment/locale/{locale id}'` somewhere in your script for any non-english locales to work properly.  
 
-\*\*\* only `size`, `padding` and `margin` style properties were tested, other properties may not work   
+\*\*\* can be used to change background color and surrounding margin/padding
+
+\*\*\*\* only `size`, `padding` and `margin` style properties were tested, other properties may not work   
 
 ## Questions or suggestions?
 
