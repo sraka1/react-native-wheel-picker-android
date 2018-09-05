@@ -17,6 +17,8 @@ and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.h
 
 ## Auto linking
 
+Doesn't work with react native v0.55 is not tested with in v0.56 
+
 `react-native link @delightfulstudio/react-native-wheel-picker-android`
 
 ## Manual linking
@@ -27,7 +29,7 @@ project(':react-native-wheel-picker-android').projectDir = new File(rootProject.
 ```
 Open `android/app/build.gradle` and add the following line to `dependencies` section: 
 ```
-compile project(':react-native-navigation')
+compile project(':react-native-wheel-picker-android')
 ```
 Open `android/app/java/com/{your package name}/MainApplication.java` and add the following line right below `package com.{your package name}`
 
