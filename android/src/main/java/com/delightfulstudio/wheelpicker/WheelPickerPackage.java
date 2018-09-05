@@ -1,4 +1,4 @@
-package com.wheelpicker;
+package com.delightfulstudio.wheelpicker;
 
 /**
  * Created by Eleken. on 13.12.16.

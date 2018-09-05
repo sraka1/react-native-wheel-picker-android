@@ -1,4 +1,4 @@
-package com.wheel_picker_example;
+package com.delightfulstudio.wheelpicker.example;
 
 import com.facebook.react.ReactActivity;
 

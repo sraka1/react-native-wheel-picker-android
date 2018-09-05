@@ -1,6 +1,6 @@
-package com.wheel_picker_example;
+package com.delightfulstudio.wheelpicker.example;
 
-import com.wheelpicker.WheelPickerPackage;
+import com.delightfulstudio.wheelpicker.WheelPickerPackage;
 
 import android.app.Application;
 
