@@ -5,6 +5,17 @@ import { StyleSheet, View } from "react-native";
 const wheelPickerData = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
 const now = new Date();
 
+const styles = StyleSheet.create( {
+    container: {
+        flex: 1,
+        alignItems: "center"
+    },
+    wheelPicker: {
+        width: 200,
+        height: 150
+    }
+} );
+
 export default class MyPickers extends Component {
     render() {
         return (
@@ -35,18 +46,7 @@ export default class MyPickers extends Component {
         // do something
     };
 
-    onTimeSelected = date =>{
+    onTimeSelected = date => {
         // do something
     };
 }
-
-const styles = StyleSheet.create( {
-    container: {
-        flex: 1,
-        alignItems: "center"
-    },
-    wheelPicker: {
-        width: 200,
-        height: 150
-    }
-} );

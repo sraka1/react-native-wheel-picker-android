@@ -31,6 +31,17 @@ import {
 const wheelPickerData = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'];
 const now = new Date()
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    wheelPicker: {
+        width: 200,
+        height: 150
+    }
+});
+
 export default class MyPickers extends Component {
     render() {
         return (
@@ -65,20 +76,6 @@ export default class MyPickers extends Component {
         // do something
     };
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-    },
-    wheelPicker: {
-        width: 200,
-        height: 150
-    }
-});
-
-module.exports = MyPickers;
-
 ```
 
 To check out working example:
