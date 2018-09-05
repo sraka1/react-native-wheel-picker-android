@@ -5,7 +5,7 @@ Note: this is a heavily modified fork, the original can be found [here](https://
 [![npm version](http://img.shields.io/npm/dm/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 
 Android-only `WheelPicker` (based on https://github.com/AigeStudio/WheelPicker) and `DatePicker` components that mimick their standard iOS counterparts ([PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
-and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html), correspondingly)
+and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html), correspondingly).
 
 `DatePicker` interface is _mostly_ compatible with `DatePickerIOS`.
 
@@ -108,7 +108,7 @@ export default class MyPickers extends Component {
 ```
 
 To check out working example:
- 1. clone [repo](https://github.com/DelightfulStudio/react-native-wheel-picker-android)
+ 1. Clone this [repo](https://github.com/DelightfulStudio/react-native-wheel-picker-android)
  2. Install root packages: `yarn` or `npm install`
  3. Install example packages: in the `example` folder, do `yarn` or `npm install`
  4. Start metro server: in the `example` folder, do `yarn start` or `npm start`
