@@ -6,16 +6,46 @@ Note: this is a heavily modified fork, the original can be found [here](https://
 
 This package is for Android only.
 
-The package provides WheelPicker based on https://github.com/AigeStudio/WheelPicker and DatePicker built on top it.
+The package provides WheelPicker based on https://github.com/AigeStudio/WheelPicker and DatePicker built on top of it.
 DatePicker has props mostly compatible with DatePickerIOS and can be used as its Android counterpart.    
  
-For IOS you can use [standard PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
+For IOS you can use standard [PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
 and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html).
 
 ## Installation Android
 `yarn add @delightfulstudio/react-native-wheel-picker-android`
 
+## Auto linking
+
 `react-native link @delightfulstudio/react-native-wheel-picker-android`
+
+## Manual linking
+Open `android/settings.gradle` and add the following two lines right above `include ':app'`:
+```
+include ':react-native-wheel-picker-android'
+project(':react-native-wheel-picker-android').projectDir = new File(rootProject.projectDir, '../node_modules/@delightfulstudio/react-native-wheel-picker-android/android')
+```
+Open `android/app/build.gradle` and add the following line to `dependencies` section: 
+```
+compile project(':react-native-navigation')
+```
+Open `android/app/java/com/{your package name}/MainApplication.java` and add the following line right below `package com.{your package name}`
+
+``` 
+import com.delightfulstudio.wheelpicker.WheelPickerPackage;
+```
+In the same file find method `getPackages()` and add `new WheelPickerPackage()` at the end of the returned array, like this:
+```
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new WheelPickerPackage() // << add this
+      );
+    }
+``` 
+
+ 
 
 # Usage
 
@@ -174,10 +204,14 @@ Callback with event in the form `event = { data: 1, position: 0 }`
 | minimumDate | [] | `maximumDate - 1 year` or `date` | `Date` | [x] | Minimum date - restricts the range of possible date/time values | 
 | maximumDate | [] | `minimumDate + 1 year` | `Date` | [x] | Maximum date - restricts the range of possible date/time values |
 | minuteInterval | [] | 1 | `enum(1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30)` | [x] | The interval at which minutes can be selected |
-| mode | [] | 'date' | `enum('date', 'time', 'datetime')` | [x] | The date picker mode |
-| locale | [] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker - supported partially, to work properly requires explicit `import "moment/locale/{locale}"` somewhere in your script} | 
+| mode* | [] | 'date' | `enum('date', 'time', 'datetime')` | [x] | The date picker mode |
+| locale** | [] | | [Locale ID](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html) | [x] | The locale for the date picker | 
 | styles | [] | | `{ picker?: {}, date?: {}, hours?: {}, minutes?: {}, gap?: {}, AM?: {} }` | [] | The control styles - allows to adjust control layout |
 | todayTitle | [] | 'Today' | `string` | [] | The title for today date item |   
+
+\* `mode: 'date'` doesn't allow to select day, month and year separately one from another and therefor is not suitable for selection in a large range of dates, ex: birthdays.
+
+\*\* `locale: {locale id}` support is limited to 12/24 mode and names of months and days, it also requires explicit `import 'moment/locale/{locale id}'` somewhere in your script for any non-english locales to work properly.  
 
 ## Questions or suggestions?
 
