@@ -34,6 +34,7 @@ export default class DatePicker extends PureComponent {
     static defaultProps = {
         mode: "date",
         todayTitle: "Today",
+        minuteInterval: 1
     };
 
 
@@ -94,7 +95,7 @@ export default class DatePicker extends PureComponent {
             <TimeColumns
                 timeOnly={ timeOnly }
                 date={ date }
-                minuteInterval={ minuteInterval || 1 }
+                minuteInterval={ minuteInterval }
                 onChange={ this.onChange }
                 styles={ this.styles }
                 locale={ locale }
