@@ -2,12 +2,12 @@ import { PixelRatio, StyleSheet } from "react-native";
 
 let cache = null;
 
-export default () => {
+export default ( customStyles ) => {
     const scale = PixelRatio.getFontScale();
-    if ( cache && cache.scale === scale )
+    if ( !customStyles && cache && cache.scale === scale )
         return cache.styles;
 
-    const styles = StyleSheet.create( {
+    const styles = StyleSheet.create( Object.assign( {
         container: {
             alignItems: "center",
             justifyContent: "center",
@@ -38,7 +38,7 @@ export default () => {
             width: 35 * scale
         }
 
-    } );
+    }, customStyles || {} ) );
 
     cache = {
         scale,

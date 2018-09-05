@@ -26,6 +26,7 @@ export default class DatePicker extends PureComponent {
         minimumDate: PropTypes.instanceOf( Date ),
         maximumDate: PropTypes.instanceOf( Date ),
         minuteInterval: PropTypes.oneOf( [ 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30 ] ),
+        styles: PropTypes.object,
         locale: PropTypes.string
     };
 
@@ -49,7 +50,7 @@ export default class DatePicker extends PureComponent {
             dateOnly: props.mode === "date"
         };
 
-        this.styles = styles();
+        this.styles = styles( props.styles );
     }
 
     render() {
