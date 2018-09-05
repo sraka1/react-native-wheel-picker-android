@@ -17,7 +17,7 @@ and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.h
 
 ## Auto linking
 
-Doesn't work with react native v0.55 is not tested with in v0.56 
+Doesn't work with RN v0.55 is not tested with v0.56 
 
 `react-native link @delightfulstudio/react-native-wheel-picker-android`
 
