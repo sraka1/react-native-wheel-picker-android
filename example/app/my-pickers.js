@@ -10,7 +10,7 @@ export default class MyPickers extends Component {
         return (
             <View style={ styles.container }>
                 <WheelPicker
-                    onItemSelected={ ( event ) => this.onItemSelected( event ) }
+                    onItemSelected={ this.onItemSelected }
                     isCurved
                     data={ wheelPickerData }
                     visibleItemCount={5}
@@ -18,28 +18,26 @@ export default class MyPickers extends Component {
                 <DatePicker
                     date={ now }
                     mode="datetime"
-                    onDateChange={ ( date ) => this.onDateTimeSelected( date ) }/>
+                    onDateChange={ this.onDateSelected }/>
                 <DatePicker
                     date={ now }
                     mode="time"
-                    onDateChange={ ( date ) => this.onTimeSelected( date ) }/>
+                    onDateChange={ this.onTimeSelected }/>
             </View>
         );
     }
 
-    onItemSelected( event ) {
+    onItemSelected = event => {
         // do something
-    }
+    };
 
-    onDateTimeSelected( date ) {
+    onDateSelected = date => {
         // do something
-    }
+    };
 
-    onTimeSelected( date ) {
+    onTimeSelected = date =>{
         // do something
-    }
-
-
+    };
 }
 
 const styles = StyleSheet.create( {
