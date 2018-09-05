@@ -4,20 +4,17 @@ Note: this is a heavily modified fork, the original can be found [here](https://
 [![npm version](http://img.shields.io/npm/v/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 [![npm version](http://img.shields.io/npm/dm/@delightfulstudio/react-native-wheel-picker-android.svg?style=flat-square)](https://npmjs.org/package/@delightfulstudio/react-native-wheel-picker-android "View this project on npm")
 
-This package is for Android only.
+Android-only `WheelPicker` (based on https://github.com/AigeStudio/WheelPicker) and `DatePicker` components that mimick their standard iOS counterparts ([PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
+and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html), correspondingly)
 
-The package provides WheelPicker based on https://github.com/AigeStudio/WheelPicker and DatePicker built on top of it.
-DatePicker has props mostly compatible with DatePickerIOS and can be used as its Android counterpart.    
- 
-For IOS you can use standard [PickerIOS](https://facebook.github.io/react-native/docs/pickerios.html)
-and [DatePickerIOS](https://facebook.github.io/react-native/docs/datepickerios.html).
+`DatePicker` interface is _mostly_ compatible with `DatePickerIOS`.
 
-## Installation Android
+## Installation
 `yarn add @delightfulstudio/react-native-wheel-picker-android`
 
 ## Auto linking
 
-Doesn't work with RN v0.55 is not tested with v0.56 
+**Note:** Doesn't work with RN v0.55, not tested with v0.56 
 
 `react-native link @delightfulstudio/react-native-wheel-picker-android`
 
