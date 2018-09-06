@@ -32,13 +32,14 @@ const scaleStyle = ( style, scale ) => {
 
 };
 
-export default ( styles ) => {
+export default ( style, styles ) => {
     const sizeScale = PixelRatio.getFontScale();
     const combinedStyles = {
         container: {
             alignItems: "center",
             justifyContent: "center",
-            flexDirection: "row"
+            flexDirection: "row",
+            ...style
         },
 
         picker: {
