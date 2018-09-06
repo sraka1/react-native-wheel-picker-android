@@ -53,12 +53,12 @@ export default class DatePicker extends PureComponent {
             dateOnly: props.mode === "date"
         };
 
-        this.styles = styles( props.style, props.styles );
+        this.styles = styles( props.styles );
     }
 
     render() {
         return (
-            <View style={ this.styles.container }>
+            <View style={ [ this.styles.container, this.props.style ] }>
                 { this.renderDate() }
                 { this.renderTime() }
             </View>
