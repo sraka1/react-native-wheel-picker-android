@@ -3,6 +3,7 @@ assets/
 example/
 android/build/
 **/__tests__/
+babel.config.js
 yalc.lock
 yarn.lock
 *.log
