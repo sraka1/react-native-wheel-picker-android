@@ -30,7 +30,7 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
 
     @Override
     protected WheelPicker createViewInstance(ThemedReactContext context) {
-        WheelPicker wheelPicker = new WheelPicker(context);
+        WheelPicker wheelPicker = new PatchedWheelPicker(context);
         wheelPicker.setOnItemSelectedListener(this);
         return wheelPicker;
     }
