@@ -1,4 +1,4 @@
-package com.delightfulstudio.wheelpicker.example;
+package com.delightfulstudio.example;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "wheel_picker_example";
+        return "example";
     }
 }

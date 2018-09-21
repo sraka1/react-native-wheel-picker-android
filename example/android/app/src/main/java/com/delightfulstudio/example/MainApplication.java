@@ -1,4 +1,4 @@
-package com.delightfulstudio.wheelpicker.example;
+package com.delightfulstudio.example;
 
 import com.delightfulstudio.wheelpicker.WheelPickerPackage;
 

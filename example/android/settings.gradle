@@ -1,4 +1,4 @@
-rootProject.name = 'wheel_picker_example'
+rootProject.name = 'wheel-picker-example'
 
 include ':react-native-wheel-picker-android'
 project(':react-native-wheel-picker-android').projectDir = new File(rootProject.projectDir, '../../android')
